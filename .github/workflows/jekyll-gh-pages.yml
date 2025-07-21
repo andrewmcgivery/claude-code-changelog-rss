@@ -2,6 +2,10 @@
 name: Deploy Jekyll with GitHub Pages dependencies preinstalled
 
 on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -11,7 +15,7 @@ on:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -43,14 +47,6 @@ jobs:
       
       - name: Generate RSS feed
         run: npm run generate
-      
-      - name: Commit RSS feed
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add public/claude-code-changelog.xml
-          git diff --staged --quiet || git commit -m "Update RSS feed"
-          git push
       
       - name: Setup Pages
         uses: actions/configure-pages@v5
