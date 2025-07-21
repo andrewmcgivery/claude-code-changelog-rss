@@ -1,0 +1,16 @@
+{
+  "name": "claude-code-changelog-rss",
+  "version": "1.0.0",
+  "description": "Generate RSS feed from Claude Code changelog",
+  "main": "generate-rss.js",
+  "scripts": {
+    "generate": "node generate-rss.js"
+  },
+  "dependencies": {
+    "rss": "^1.2.2",
+    "marked": "^12.0.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
