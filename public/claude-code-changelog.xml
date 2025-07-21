@@ -1,0 +1,903 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[Claude Code Changelog]]></title>
+        <description><![CDATA[Latest updates and changes to Claude Code]]></description>
+        <link>https://github.com/anthropics/claude-code</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Mon, 21 Jul 2025 16:34:35 GMT</lastBuildDate>
+        <atom:link href="https://anthropics.github.io/claude-code-changelog-rss/claude-code-changelog.xml" rel="self" type="application/rss+xml"/>
+        <pubDate>Mon, 21 Jul 2025 16:34:35 GMT</pubDate>
+        <language><![CDATA[en]]></language>
+        <ttl>1440</ttl>
+        <item>
+            <title><![CDATA[Claude Code 1.0.54]]></title>
+            <description><![CDATA[<ul>
+<li>Hooks: Added UserPromptSubmit hook and the current working directory to hook inputs</li>
+<li>Custom slash commands: Added argument-hint to frontmatter</li>
+<li>Windows: OAuth uses port 45454 and properly constructs browser URL</li>
+<li>Windows: mode switching now uses alt + m, and plan mode renders properly</li>
+<li>Shell: Switch to in-memory shell snapshot to fix file-related errors</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#1054</link>
+            <guid isPermaLink="false">claude-code-1.0.54</guid>
+            <pubDate>Sat, 19 Jul 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.53]]></title>
+            <description><![CDATA[<ul>
+<li>Updated @-mention file truncation from 100 lines to 2000 lines</li>
+<li>Add helper script settings for AWS token refresh: awsAuthRefresh (for foreground operations like aws sso login) and awsCredentialExport (for background operation with STS-like response).</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#1053</link>
+            <guid isPermaLink="false">claude-code-1.0.53</guid>
+            <pubDate>Fri, 18 Jul 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.52]]></title>
+            <description><![CDATA[<ul>
+<li>Added support for MCP server instructions</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#1052</link>
+            <guid isPermaLink="false">claude-code-1.0.52</guid>
+            <pubDate>Fri, 18 Jul 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.51]]></title>
+            <description><![CDATA[<ul>
+<li>Added support for native Windows (requires Git for Windows)</li>
+<li>Added support for Bedrock API keys through environment variable AWS_BEARER_TOKEN_BEDROCK</li>
+<li>Settings: /doctor can now help you identify and fix invalid setting files</li>
+<li><code>--append-system-prompt</code> can now be used in interactive mode, not just --print/-p.</li>
+<li>Increased auto-compact warning threshold from 60% to 80%</li>
+<li>Fixed an issue with handling user directories with spaces for shell snapshots</li>
+<li>OTEL resource now includes os.type, os.version, host.arch, and wsl.version (if running on Windows Subsystem for Linux)</li>
+<li>Custom slash commands: Fixed user-level commands in subdirectories</li>
+<li>Plan mode: Fixed issue where rejected plan from sub-task would get discarded</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#1051</link>
+            <guid isPermaLink="false">claude-code-1.0.51</guid>
+            <pubDate>Fri, 11 Jul 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.48]]></title>
+            <description><![CDATA[<ul>
+<li>Fixed a bug in v1.0.45 where the app would sometimes freeze on launch</li>
+<li>Added progress messages to Bash tool based on the last 5 lines of command output</li>
+<li>Added expanding variables support for MCP server configuration</li>
+<li>Moved shell snapshots from /tmp to ~/.claude for more reliable Bash tool calls</li>
+<li>Improved IDE extension path handling when Claude Code runs in WSL</li>
+<li>Hooks: Added a PreCompact hook</li>
+<li>Vim mode: Added c, f/F, t/T</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#1048</link>
+            <guid isPermaLink="false">claude-code-1.0.48</guid>
+            <pubDate>Thu, 10 Jul 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.45]]></title>
+            <description><![CDATA[<ul>
+<li>Redesigned Search (Grep) tool with new tool input parameters and features</li>
+<li>Disabled IDE diffs for notebook files, fixing &quot;Timeout waiting after 1000ms&quot; error</li>
+<li>Fixed config file corruption issue by enforcing atomic writes</li>
+<li>Updated prompt input undo to Ctrl+_ to avoid breaking existing Ctrl+U behavior, matching zsh&#39;s undo shortcut</li>
+<li>Stop Hooks: Fixed transcript path after /clear and fixed triggering when loop ends with tool call</li>
+<li>Custom slash commands: Restored namespacing in command names based on subdirectories. For example, .claude/commands/frontend/component.md is now /frontend:component, not /component.</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#1045</link>
+            <guid isPermaLink="false">claude-code-1.0.45</guid>
+            <pubDate>Thu, 10 Jul 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.44]]></title>
+            <description><![CDATA[<ul>
+<li>New /export command lets you quickly export a conversation for sharing</li>
+<li>MCP: resource_link tool results are now supported</li>
+<li>MCP: tool annotations and tool titles now display in /mcp view</li>
+<li>Changed Ctrl+Z to suspend Claude Code. Resume by running <code>fg</code>. Prompt input undo is now Ctrl+U.</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#1044</link>
+            <guid isPermaLink="false">claude-code-1.0.44</guid>
+            <pubDate>Mon, 07 Jul 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.43]]></title>
+            <description><![CDATA[<ul>
+<li>Fixed a bug where the theme selector was saving excessively</li>
+<li>Hooks: Added EPIPE system error handling</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#1043</link>
+            <guid isPermaLink="false">claude-code-1.0.43</guid>
+            <pubDate>Thu, 03 Jul 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.42]]></title>
+            <description><![CDATA[<ul>
+<li>Added tilde (<code>~</code>) expansion support to <code>/add-dir</code> command</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#1042</link>
+            <guid isPermaLink="false">claude-code-1.0.42</guid>
+            <pubDate>Thu, 03 Jul 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.41]]></title>
+            <description><![CDATA[<ul>
+<li>Hooks: Split Stop hook triggering into Stop and SubagentStop</li>
+<li>Hooks: Enabled optional timeout configuration for each command</li>
+<li>Hooks: Added &quot;hook_event_name&quot; to hook input</li>
+<li>Fixed a bug where MCP tools would display twice in tool list</li>
+<li>New tool parameters JSON for Bash tool in <code>tool_decision</code> event</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#1041</link>
+            <guid isPermaLink="false">claude-code-1.0.41</guid>
+            <pubDate>Thu, 03 Jul 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.40]]></title>
+            <description><![CDATA[<ul>
+<li>Fixed a bug causing API connection errors with UNABLE_TO_GET_ISSUER_CERT_LOCALLY if <code>NODE_EXTRA_CA_CERTS</code> was set</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#1040</link>
+            <guid isPermaLink="false">claude-code-1.0.40</guid>
+            <pubDate>Thu, 03 Jul 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.39]]></title>
+            <description><![CDATA[<ul>
+<li>New Active Time metric in OpenTelemetry logging</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#1039</link>
+            <guid isPermaLink="false">claude-code-1.0.39</guid>
+            <pubDate>Thu, 03 Jul 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.38]]></title>
+            <description><![CDATA[<ul>
+<li>Released hooks. Special thanks to community input in <a href="https://github.com/anthropics/claude-code/issues/712">https://github.com/anthropics/claude-code/issues/712</a>. Docs: <a href="https://docs.anthropic.com/en/docs/claude-code/hooks">https://docs.anthropic.com/en/docs/claude-code/hooks</a></li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#1038</link>
+            <guid isPermaLink="false">claude-code-1.0.38</guid>
+            <pubDate>Mon, 30 Jun 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.37]]></title>
+            <description><![CDATA[<ul>
+<li>Remove ability to set <code>Proxy-Authorization</code> header via ANTHROPIC_AUTH_TOKEN or apiKeyHelper</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#1037</link>
+            <guid isPermaLink="false">claude-code-1.0.37</guid>
+            <pubDate>Mon, 30 Jun 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.36]]></title>
+            <description><![CDATA[<ul>
+<li>Web search now takes today&#39;s date into context</li>
+<li>Fixed a bug where stdio MCP servers were not terminating properly on exit</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#1036</link>
+            <guid isPermaLink="false">claude-code-1.0.36</guid>
+            <pubDate>Mon, 30 Jun 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.35]]></title>
+            <description><![CDATA[<ul>
+<li>Added support for MCP OAuth Authorization Server discovery</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#1035</link>
+            <guid isPermaLink="false">claude-code-1.0.35</guid>
+            <pubDate>Wed, 25 Jun 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.34]]></title>
+            <description><![CDATA[<ul>
+<li>Fixed a memory leak causing a MaxListenersExceededWarning message to appear</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#1034</link>
+            <guid isPermaLink="false">claude-code-1.0.34</guid>
+            <pubDate>Tue, 24 Jun 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.33]]></title>
+            <description><![CDATA[<ul>
+<li>Improved logging functionality with session ID support</li>
+<li>Added prompt input undo functionality (Ctrl+Z and vim &#39;u&#39; command)</li>
+<li>Improvements to plan mode</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#1033</link>
+            <guid isPermaLink="false">claude-code-1.0.33</guid>
+            <pubDate>Tue, 24 Jun 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.32]]></title>
+            <description><![CDATA[<ul>
+<li>Updated loopback config for litellm</li>
+<li>Added forceLoginMethod setting to bypass login selection screen</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#1032</link>
+            <guid isPermaLink="false">claude-code-1.0.32</guid>
+            <pubDate>Tue, 24 Jun 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.31]]></title>
+            <description><![CDATA[<ul>
+<li>Fixed a bug where ~/.claude.json would get reset when file contained invalid JSON</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#1031</link>
+            <guid isPermaLink="false">claude-code-1.0.31</guid>
+            <pubDate>Tue, 24 Jun 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.30]]></title>
+            <description><![CDATA[<ul>
+<li>Custom slash commands: Run bash output, @-mention files, enable thinking with thinking keywords</li>
+<li>Improved file path autocomplete with filename matching</li>
+<li>Added timestamps in Ctrl-r mode and fixed Ctrl-c handling</li>
+<li>Enhanced jq regex support for complex filters with pipes and select</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#1030</link>
+            <guid isPermaLink="false">claude-code-1.0.30</guid>
+            <pubDate>Tue, 24 Jun 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.29]]></title>
+            <description><![CDATA[<ul>
+<li>Improved CJK character support in cursor navigation and rendering</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#1029</link>
+            <guid isPermaLink="false">claude-code-1.0.29</guid>
+            <pubDate>Tue, 24 Jun 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.28]]></title>
+            <description><![CDATA[<ul>
+<li>Slash commands: Fix selector display during history navigation</li>
+<li>Resizes images before upload to prevent API size limit errors</li>
+<li>Added XDG_CONFIG_HOME support to configuration directory</li>
+<li>Performance optimizations for memory usage</li>
+<li>New attributes (terminal.type, language) in OpenTelemetry logging</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#1028</link>
+            <guid isPermaLink="false">claude-code-1.0.28</guid>
+            <pubDate>Tue, 24 Jun 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.27]]></title>
+            <description><![CDATA[<ul>
+<li>Streamable HTTP MCP servers are now supported</li>
+<li>Remote MCP servers (SSE and HTTP) now support OAuth</li>
+<li>MCP resources can now be @-mentioned</li>
+<li>/resume slash command to switch conversations within Claude Code</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#1027</link>
+            <guid isPermaLink="false">claude-code-1.0.27</guid>
+            <pubDate>Wed, 18 Jun 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.25]]></title>
+            <description><![CDATA[<ul>
+<li>Slash commands: moved &quot;project&quot; and &quot;user&quot; prefixes to descriptions</li>
+<li>Slash commands: improved reliability for command discovery</li>
+<li>Improved support for Ghostty</li>
+<li>Improved web search reliability</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#1025</link>
+            <guid isPermaLink="false">claude-code-1.0.25</guid>
+            <pubDate>Mon, 16 Jun 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.24]]></title>
+            <description><![CDATA[<ul>
+<li>Improved /mcp output</li>
+<li>Fixed a bug where settings arrays got overwritten instead of merged</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#1024</link>
+            <guid isPermaLink="false">claude-code-1.0.24</guid>
+            <pubDate>Mon, 16 Jun 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.23]]></title>
+            <description><![CDATA[<ul>
+<li>Released TypeScript SDK: import @anthropic-ai/claude-code to get started</li>
+<li>Released Python SDK: pip install claude-code-sdk to get started</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#1023</link>
+            <guid isPermaLink="false">claude-code-1.0.23</guid>
+            <pubDate>Mon, 16 Jun 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.22]]></title>
+            <description><![CDATA[<ul>
+<li>SDK: Renamed <code>total_cost</code> to <code>total_cost_usd</code></li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#1022</link>
+            <guid isPermaLink="false">claude-code-1.0.22</guid>
+            <pubDate>Thu, 12 Jun 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.21]]></title>
+            <description><![CDATA[<ul>
+<li>Improved editing of files with tab-based indentation</li>
+<li>Fix for tool_use without matching tool_result errors</li>
+<li>Fixed a bug where stdio MCP server processes would linger after quitting Claude Code</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#1021</link>
+            <guid isPermaLink="false">claude-code-1.0.21</guid>
+            <pubDate>Thu, 12 Jun 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.18]]></title>
+            <description><![CDATA[<ul>
+<li>Added --add-dir CLI argument for specifying additional working directories</li>
+<li>Added streaming input support without require -p flag</li>
+<li>Improved startup performance and session storage performance</li>
+<li>Added CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR environment variable to freeze working directory for bash commands</li>
+<li>Added detailed MCP server tools display (/mcp)</li>
+<li>MCP authentication and permission improvements</li>
+<li>Added auto-reconnection for MCP SSE connections on disconnect</li>
+<li>Fixed issue where pasted content was lost when dialogs appeared</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#1018</link>
+            <guid isPermaLink="false">claude-code-1.0.18</guid>
+            <pubDate>Mon, 09 Jun 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.17]]></title>
+            <description><![CDATA[<ul>
+<li>We now emit messages from sub-tasks in -p mode (look for the parent_tool_use_id property)</li>
+<li>Fixed crashes when the VS Code diff tool is invoked multiple times quickly</li>
+<li>MCP server list UI improvements</li>
+<li>Update Claude Code process title to display &quot;claude&quot; instead of &quot;node&quot;</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#1017</link>
+            <guid isPermaLink="false">claude-code-1.0.17</guid>
+            <pubDate>Mon, 09 Jun 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.11]]></title>
+            <description><![CDATA[<ul>
+<li>Claude Code can now also be used with a Claude Pro subscription</li>
+<li>Added /upgrade for smoother switching to Claude Max plans</li>
+<li>Improved UI for authentication from API keys and Bedrock/Vertex/external auth tokens</li>
+<li>Improved shell configuration error handling</li>
+<li>Improved todo list handling during compaction</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#1011</link>
+            <guid isPermaLink="false">claude-code-1.0.11</guid>
+            <pubDate>Wed, 04 Jun 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.10]]></title>
+            <description><![CDATA[<ul>
+<li>Added markdown table support</li>
+<li>Improved streaming performance</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#1010</link>
+            <guid isPermaLink="false">claude-code-1.0.10</guid>
+            <pubDate>Wed, 04 Jun 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.8]]></title>
+            <description><![CDATA[<ul>
+<li>Fixed Vertex AI region fallback when using CLOUD_ML_REGION</li>
+<li>Increased default otel interval from 1s -&gt; 5s</li>
+<li>Fixed edge cases where MCP_TIMEOUT and MCP_TOOL_TIMEOUT weren&#39;t being respected</li>
+<li>Fixed a regression where search tools unnecessarily asked for permissions</li>
+<li>Added support for triggering thinking non-English languages</li>
+<li>Improved compacting UI</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#108</link>
+            <guid isPermaLink="false">claude-code-1.0.8</guid>
+            <pubDate>Mon, 02 Jun 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.7]]></title>
+            <description><![CDATA[<ul>
+<li>Renamed /allowed-tools -&gt; /permissions</li>
+<li>Migrated allowedTools and ignorePatterns from .claude.json -&gt; settings.json</li>
+<li>Deprecated claude config commands in favor of editing settings.json</li>
+<li>Fixed a bug where --dangerously-skip-permissions sometimes didn&#39;t work in --print mode</li>
+<li>Improved error handling for /install-github-app</li>
+<li>Bugfixes, UI polish, and tool reliability improvements</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#107</link>
+            <guid isPermaLink="false">claude-code-1.0.7</guid>
+            <pubDate>Mon, 02 Jun 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.6]]></title>
+            <description><![CDATA[<ul>
+<li>Improved edit reliability for tab-indented files</li>
+<li>Respect CLAUDE_CONFIG_DIR everywhere</li>
+<li>Reduced unnecessary tool permission prompts</li>
+<li>Added support for symlinks in @file typeahead</li>
+<li>Bugfixes, UI polish, and tool reliability improvements</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#106</link>
+            <guid isPermaLink="false">claude-code-1.0.6</guid>
+            <pubDate>Mon, 02 Jun 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.4]]></title>
+            <description><![CDATA[<ul>
+<li>Fixed a bug where MCP tool errors weren&#39;t being parsed correctly</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#104</link>
+            <guid isPermaLink="false">claude-code-1.0.4</guid>
+            <pubDate>Thu, 10 Jul 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.1]]></title>
+            <description><![CDATA[<ul>
+<li>Added <code>DISABLE_INTERLEAVED_THINKING</code> to give users the option to opt out of interleaved thinking.</li>
+<li>Improved model references to show provider-specific names (Sonnet 3.7 for Bedrock, Sonnet 4 for Console)</li>
+<li>Updated documentation links and OAuth process descriptions</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#101</link>
+            <guid isPermaLink="false">claude-code-1.0.1</guid>
+            <pubDate>Mon, 09 Jun 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 1.0.0]]></title>
+            <description><![CDATA[<ul>
+<li>Claude Code is now generally available</li>
+<li>Introducing Sonnet 4 and Opus 4 models</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#100</link>
+            <guid isPermaLink="false">claude-code-1.0.0</guid>
+            <pubDate>Thu, 22 May 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.125]]></title>
+            <description><![CDATA[<ul>
+<li>Breaking change: Bedrock ARN passed to <code>ANTHROPIC_MODEL</code> or <code>ANTHROPIC_SMALL_FAST_MODEL</code> should no longer contain an escaped slash (specify <code>/</code> instead of <code>%2F</code>)</li>
+<li>Removed <code>DEBUG=true</code> in favor of <code>ANTHROPIC_LOG=debug</code>, to log all requests</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#02125</link>
+            <guid isPermaLink="false">claude-code-0.2.125</guid>
+            <pubDate>Wed, 21 May 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.117]]></title>
+            <description><![CDATA[<ul>
+<li>Breaking change: --print JSON output now returns nested message objects, for forwards-compatibility as we introduce new metadata fields</li>
+<li>Introduced settings.cleanupPeriodDays</li>
+<li>Introduced CLAUDE_CODE_API_KEY_HELPER_TTL_MS env var</li>
+<li>Introduced --debug mode</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#02117</link>
+            <guid isPermaLink="false">claude-code-0.2.117</guid>
+            <pubDate>Sat, 17 May 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.108]]></title>
+            <description><![CDATA[<ul>
+<li>You can now send messages to Claude while it works to steer Claude in real-time</li>
+<li>Introduced BASH_DEFAULT_TIMEOUT_MS and BASH_MAX_TIMEOUT_MS env vars</li>
+<li>Fixed a bug where thinking was not working in -p mode</li>
+<li>Fixed a regression in /cost reporting</li>
+<li>Deprecated MCP wizard interface in favor of other MCP commands</li>
+<li>Lots of other bugfixes and improvements</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#02108</link>
+            <guid isPermaLink="false">claude-code-0.2.108</guid>
+            <pubDate>Tue, 13 May 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.107]]></title>
+            <description><![CDATA[<ul>
+<li>CLAUDE.md files can now import other files. Add @path/to/file.md to ./CLAUDE.md to load additional files on launch</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#02107</link>
+            <guid isPermaLink="false">claude-code-0.2.107</guid>
+            <pubDate>Fri, 09 May 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.106]]></title>
+            <description><![CDATA[<ul>
+<li>MCP SSE server configs can now specify custom headers</li>
+<li>Fixed a bug where MCP permission prompt didn&#39;t always show correctly</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#02106</link>
+            <guid isPermaLink="false">claude-code-0.2.106</guid>
+            <pubDate>Fri, 09 May 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.105]]></title>
+            <description><![CDATA[<ul>
+<li>Claude can now search the web</li>
+<li>Moved system &amp; account status to /status</li>
+<li>Added word movement keybindings for Vim</li>
+<li>Improved latency for startup, todo tool, and file edits</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#02105</link>
+            <guid isPermaLink="false">claude-code-0.2.105</guid>
+            <pubDate>Thu, 08 May 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.102]]></title>
+            <description><![CDATA[<ul>
+<li>Improved thinking triggering reliability</li>
+<li>Improved @mention reliability for images and folders</li>
+<li>You can now paste multiple large chunks into one prompt</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#02102</link>
+            <guid isPermaLink="false">claude-code-0.2.102</guid>
+            <pubDate>Mon, 05 May 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.100]]></title>
+            <description><![CDATA[<ul>
+<li>Fixed a crash caused by a stack overflow error</li>
+<li>Made db storage optional; missing db support disables --continue and --resume</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#02100</link>
+            <guid isPermaLink="false">claude-code-0.2.100</guid>
+            <pubDate>Fri, 02 May 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.98]]></title>
+            <description><![CDATA[<ul>
+<li>Fixed an issue where auto-compact was running twice</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#0298</link>
+            <guid isPermaLink="false">claude-code-0.2.98</guid>
+            <pubDate>Thu, 01 May 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.96]]></title>
+            <description><![CDATA[<ul>
+<li>Claude Code can now also be used with a Claude Max subscription (<a href="https://claude.ai/upgrade">https://claude.ai/upgrade</a>)</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#0296</link>
+            <guid isPermaLink="false">claude-code-0.2.96</guid>
+            <pubDate>Thu, 01 May 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.93]]></title>
+            <description><![CDATA[<ul>
+<li>Resume conversations from where you left off from with &quot;claude --continue&quot; and &quot;claude --resume&quot;</li>
+<li>Claude now has access to a Todo list that helps it stay on track and be more organized</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#0293</link>
+            <guid isPermaLink="false">claude-code-0.2.93</guid>
+            <pubDate>Wed, 30 Apr 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.82]]></title>
+            <description><![CDATA[<ul>
+<li>Added support for --disallowedTools</li>
+<li>Renamed tools for consistency: LSTool -&gt; LS, View -&gt; Read, etc.</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#0282</link>
+            <guid isPermaLink="false">claude-code-0.2.82</guid>
+            <pubDate>Fri, 25 Apr 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.75]]></title>
+            <description><![CDATA[<ul>
+<li>Hit Enter to queue up additional messages while Claude is working</li>
+<li>Drag in or copy/paste image files directly into the prompt</li>
+<li>@-mention files to directly add them to context</li>
+<li>Run one-off MCP servers with <code>claude --mcp-config &lt;path-to-file&gt;</code></li>
+<li>Improved performance for filename auto-complete</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#0275</link>
+            <guid isPermaLink="false">claude-code-0.2.75</guid>
+            <pubDate>Mon, 21 Apr 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.74]]></title>
+            <description><![CDATA[<ul>
+<li>Added support for refreshing dynamically generated API keys (via apiKeyHelper), with a 5 minute TTL</li>
+<li>Task tool can now perform writes and run bash commands</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#0274</link>
+            <guid isPermaLink="false">claude-code-0.2.74</guid>
+            <pubDate>Fri, 18 Apr 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.72]]></title>
+            <description><![CDATA[<ul>
+<li>Updated spinner to indicate tokens loaded and tool usage</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#0272</link>
+            <guid isPermaLink="false">claude-code-0.2.72</guid>
+            <pubDate>Fri, 18 Apr 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.70]]></title>
+            <description><![CDATA[<ul>
+<li>Network commands like curl are now available for Claude to use</li>
+<li>Claude can now run multiple web queries in parallel</li>
+<li>Pressing ESC once immediately interrupts Claude in Auto-accept mode</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#0270</link>
+            <guid isPermaLink="false">claude-code-0.2.70</guid>
+            <pubDate>Thu, 17 Apr 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.69]]></title>
+            <description><![CDATA[<ul>
+<li>Fixed UI glitches with improved Select component behavior</li>
+<li>Enhanced terminal output display with better text truncation logic</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#0269</link>
+            <guid isPermaLink="false">claude-code-0.2.69</guid>
+            <pubDate>Thu, 17 Apr 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.67]]></title>
+            <description><![CDATA[<ul>
+<li>Shared project permission rules can be saved in .claude/settings.json</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#0267</link>
+            <guid isPermaLink="false">claude-code-0.2.67</guid>
+            <pubDate>Thu, 17 Apr 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.66]]></title>
+            <description><![CDATA[<ul>
+<li>Print mode (-p) now supports streaming output via --output-format=stream-json</li>
+<li>Fixed issue where pasting could trigger memory or bash mode unexpectedly</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#0266</link>
+            <guid isPermaLink="false">claude-code-0.2.66</guid>
+            <pubDate>Thu, 17 Apr 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.63]]></title>
+            <description><![CDATA[<ul>
+<li>Fixed an issue where MCP tools were loaded twice, which caused tool call errors</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#0263</link>
+            <guid isPermaLink="false">claude-code-0.2.63</guid>
+            <pubDate>Thu, 17 Apr 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.61]]></title>
+            <description><![CDATA[<ul>
+<li>Navigate menus with vim-style keys (j/k) or bash/emacs shortcuts (Ctrl+n/p) for faster interaction</li>
+<li>Enhanced image detection for more reliable clipboard paste functionality</li>
+<li>Fixed an issue where ESC key could crash the conversation history selector</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#0261</link>
+            <guid isPermaLink="false">claude-code-0.2.61</guid>
+            <pubDate>Wed, 02 Apr 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.59]]></title>
+            <description><![CDATA[<ul>
+<li>Copy+paste images directly into your prompt</li>
+<li>Improved progress indicators for bash and fetch tools</li>
+<li>Bugfixes for non-interactive mode (-p)</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#0259</link>
+            <guid isPermaLink="false">claude-code-0.2.59</guid>
+            <pubDate>Wed, 02 Apr 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.54]]></title>
+            <description><![CDATA[<ul>
+<li>Quickly add to Memory by starting your message with &#39;#&#39;</li>
+<li>Press ctrl+r to see full output for long tool results</li>
+<li>Added support for MCP SSE transport</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#0254</link>
+            <guid isPermaLink="false">claude-code-0.2.54</guid>
+            <pubDate>Wed, 02 Apr 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.53]]></title>
+            <description><![CDATA[<ul>
+<li>New web fetch tool lets Claude view URLs that you paste in</li>
+<li>Fixed a bug with JPEG detection</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#0253</link>
+            <guid isPermaLink="false">claude-code-0.2.53</guid>
+            <pubDate>Wed, 02 Apr 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.50]]></title>
+            <description><![CDATA[<ul>
+<li>New MCP &quot;project&quot; scope now allows you to add MCP servers to .mcp.json files and commit them to your repository</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#0250</link>
+            <guid isPermaLink="false">claude-code-0.2.50</guid>
+            <pubDate>Wed, 02 Apr 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.49]]></title>
+            <description><![CDATA[<ul>
+<li>Previous MCP server scopes have been renamed: previous &quot;project&quot; scope is now &quot;local&quot; and &quot;global&quot; scope is now &quot;user&quot;</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#0249</link>
+            <guid isPermaLink="false">claude-code-0.2.49</guid>
+            <pubDate>Wed, 02 Apr 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.47]]></title>
+            <description><![CDATA[<ul>
+<li>Press Tab to auto-complete file and folder names</li>
+<li>Press Shift + Tab to toggle auto-accept for file edits</li>
+<li>Automatic conversation compaction for infinite conversation length (toggle with /config)</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#0247</link>
+            <guid isPermaLink="false">claude-code-0.2.47</guid>
+            <pubDate>Wed, 02 Apr 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.44]]></title>
+            <description><![CDATA[<ul>
+<li>Ask Claude to make a plan with thinking mode: just say &#39;think&#39; or &#39;think harder&#39; or even &#39;ultrathink&#39;</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#0244</link>
+            <guid isPermaLink="false">claude-code-0.2.44</guid>
+            <pubDate>Wed, 02 Apr 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.41]]></title>
+            <description><![CDATA[<ul>
+<li>MCP server startup timeout can now be configured via MCP_TIMEOUT environment variable</li>
+<li>MCP server startup no longer blocks the app from starting up</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#0241</link>
+            <guid isPermaLink="false">claude-code-0.2.41</guid>
+            <pubDate>Wed, 02 Apr 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.37]]></title>
+            <description><![CDATA[<ul>
+<li>New /release-notes command lets you view release notes at any time</li>
+<li><code>claude config add/remove</code> commands now accept multiple values separated by commas or spaces</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#0237</link>
+            <guid isPermaLink="false">claude-code-0.2.37</guid>
+            <pubDate>Wed, 02 Apr 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.36]]></title>
+            <description><![CDATA[<ul>
+<li>Import MCP servers from Claude Desktop with <code>claude mcp add-from-claude-desktop</code></li>
+<li>Add MCP servers as JSON strings with <code>claude mcp add-json &lt;n&gt; &lt;json&gt;</code></li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#0236</link>
+            <guid isPermaLink="false">claude-code-0.2.36</guid>
+            <pubDate>Wed, 02 Apr 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.34]]></title>
+            <description><![CDATA[<ul>
+<li>Vim bindings for text input - enable with /vim or /config</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#0234</link>
+            <guid isPermaLink="false">claude-code-0.2.34</guid>
+            <pubDate>Wed, 02 Apr 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.32]]></title>
+            <description><![CDATA[<ul>
+<li>Interactive MCP setup wizard: Run &quot;claude mcp add&quot; to add MCP servers with a step-by-step interface</li>
+<li>Fix for some PersistentShell issues</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#0232</link>
+            <guid isPermaLink="false">claude-code-0.2.32</guid>
+            <pubDate>Wed, 02 Apr 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.31]]></title>
+            <description><![CDATA[<ul>
+<li>Custom slash commands: Markdown files in .claude/commands/ directories now appear as custom slash commands to insert prompts into your conversation</li>
+<li>MCP debug mode: Run with --mcp-debug flag to get more information about MCP server errors</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#0231</link>
+            <guid isPermaLink="false">claude-code-0.2.31</guid>
+            <pubDate>Wed, 02 Apr 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.30]]></title>
+            <description><![CDATA[<ul>
+<li>Added ANSI color theme for better terminal compatibility</li>
+<li>Fixed issue where slash command arguments weren&#39;t being sent properly</li>
+<li>(Mac-only) API keys are now stored in macOS Keychain</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#0230</link>
+            <guid isPermaLink="false">claude-code-0.2.30</guid>
+            <pubDate>Wed, 02 Apr 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.26]]></title>
+            <description><![CDATA[<ul>
+<li>New /approved-tools command for managing tool permissions</li>
+<li>Word-level diff display for improved code readability</li>
+<li>Fuzzy matching for slash commands</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#0226</link>
+            <guid isPermaLink="false">claude-code-0.2.26</guid>
+            <pubDate>Wed, 02 Apr 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Claude Code 0.2.21]]></title>
+            <description><![CDATA[<ul>
+<li>Fuzzy matching for /commands</li>
+</ul>
+]]></description>
+            <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#0221</link>
+            <guid isPermaLink="false">claude-code-0.2.21</guid>
+            <pubDate>Wed, 02 Apr 2025 00:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>
